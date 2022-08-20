@@ -19,7 +19,7 @@ export class CreateProductComponent implements OnInit {
   form = new FormGroup({
     title: new FormControl<string>('', [
       Validators.required,
-      Validators.maxLength(6)
+      Validators.minLength(6)
     ])
   })
 
@@ -31,6 +31,7 @@ export class CreateProductComponent implements OnInit {
   }
 
   submit() {
+    console.log(this.form)
     this.productService.create({
       title: this.form.value.title as string,
       price: 13.5,

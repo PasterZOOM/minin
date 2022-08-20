@@ -9,7 +9,7 @@
 
   <p
     class="text-red-600 font-medium mb-2"
-    *ngIf="title.errors?.maxLength && title.touched"
+    *ngIf="title.errors?.minlength && title.touched"
   >
     Please fill title field width min length. Now {{title.value.length}}
   </p>
